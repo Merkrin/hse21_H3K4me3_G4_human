@@ -69,3 +69,26 @@ cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  merged.hg19
 ```
 
 Затем с помощью команды `scp -P` полученный файл был загружен на ПК для дальнейшей работы.
+
+##### Визуализация
+
+С помощью [Genome Browser](http://genome-euro.ucsc.edu/cgi-bin/hgTracks?db=hg19&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrX%3A15578261%2D15621068&hgsid=266766093_PVMPcgGaHkBnpRFiuCq9kXuls34O) были визуализированы полученные исходные наборы ChIP-seq пиков и их объединение:
+
+```
+track visibility=dense name="ENCFF573MUH"  description="ENCFF881GRS.hg19.filtered.bed"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/ENCFF881GRS.hg19.filtered.bed
+
+track visibility=dense name="ENCFF832EOL"  description="ENCFF883IEF.hg19.filtered.bed"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/ENCFF883IEF.hg19.filtered.bed
+
+track visibility=dense name="ChIP_merge"  color=50,50,200   description="merge.hg19.bed"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/merged.hg19.bed
+```
+
+![hgt_genome_euro_2194f_b8def0](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/results/hgt_genome_euro_2194f_b8def0.png)
+
+Как может быть видно, объединение покрывает все наборы.
+
+#### Анализ участков вторичной структуры ДНК
+
+
