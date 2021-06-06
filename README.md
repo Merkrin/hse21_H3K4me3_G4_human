@@ -91,4 +91,30 @@ https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/merge
 
 #### Анализ участков вторичной структуры ДНК
 
+На кластер в личную директорию iabarchuk/project были сохранены архивы с .bed-файлами с данными вторичной структуры ДНК:
+
+```bash
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz
+
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz
+```
+
+Для последующей работы они были распакованы (с удалением не нужных для работы столбцов) и объединены в один файл с помощью bedtools:
+
+```bash
+zcat GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz | cut -f1-5 > GSM3003539_minus.bed
+zcat GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz | cut -f1-5 > GSM3003539_plus.bed
+
+cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > GSM3003539.merged.bed 
+```
+Затем с помощью команды `scp -P` полученный файл был загружен на ПК для дальнейшей работы.
+
+Далее с помощью [скрипта](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/src/length_hists.R) на языке программирования R была получена гистограмма длин участков. Были получены следующие результаты:
+
+![len_hist.GSM3003539.merged](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/results/len_hist.GSM3003539.merged.png)
+
+Также с помощью [скрипта](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/src/chip_seeker.R) на языке программирования R был построен график расположения пиков относительно аннотированных генов. Были получены следующие результаты:
+
+![chip_seeker.GSM3003539.merged.plotAnnoPie](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/results/chip_seeker.GSM3003539.merged.plotAnnoPie.png)
+
 

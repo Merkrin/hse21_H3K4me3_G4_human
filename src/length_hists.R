@@ -13,10 +13,11 @@ package.check('tibble')
 
 ###
 
-NAME <- 'ENCFF881GRS.hg19'
+# NAME <- 'ENCFF881GRS.hg19'
 # NAME <- 'ENCFF881GRS.hg38'
 # NAME <- 'ENCFF883IEF.hg19'
 # NAME <- 'ENCFF883IEF.hg38'
+NAME <- 'GSM3003539.merged'
 
 OUT_DIR <- '../results/'
 

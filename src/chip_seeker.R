@@ -26,7 +26,8 @@ library(org.Hs.eg.db)
 ###
 
 # NAME <- 'ENCFF881GRS.hg19.filtered'
-NAME <- 'ENCFF883IEF.hg19.filtered'
+# NAME <- 'ENCFF883IEF.hg19.filtered'
+NAME <- 'GSM3003539.merged'
 
 BED_FN <- paste0(DATA_DIR, NAME, '.bed')
 
