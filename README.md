@@ -72,7 +72,7 @@ cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  merged.hg19
 
 ##### Визуализация
 
-С помощью [Genome Browser](http://genome-euro.ucsc.edu/cgi-bin/hgTracks?db=hg19&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chrX%3A15578261%2D15621068&hgsid=266766093_PVMPcgGaHkBnpRFiuCq9kXuls34O) были визуализированы полученные исходные наборы ChIP-seq пиков и их объединение:
+С помощью [Genome Browser](http://genome-euro.ucsc.edu/s/stellaFortuna/H3K4me3_G4_human) были визуализированы полученные исходные наборы ChIP-seq пиков и их объединение:
 
 ```
 track visibility=dense name="ENCFF573MUH"  description="ENCFF881GRS.hg19.filtered.bed"
@@ -125,5 +125,36 @@ bedtools intersect -a GSM3003539.merged.bed -b merged.hg19.bed > intersect.bed
 ```
 
 Затем с помощью команды `scp -P` полученный файл был загружен на ПК для дальнейшей работы.
+
+С помощью [Genome Browser](http://genome-euro.ucsc.edu/s/stellaFortuna/H3K4me3_G4_human) были визуализированы полученные участки:
+
+```
+track visibility=dense name="ENCFF573MUH"  description="ENCFF881GRS.hg19.filtered.bed"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/ENCFF881GRS.hg19.filtered.bed
+
+track visibility=dense name="ENCFF832EOL"  description="ENCFF883IEF.hg19.filtered.bed"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/ENCFF883IEF.hg19.filtered.bed
+
+track visibility=dense name="ChIP_merge"  color=50,50,200   description="merge.hg19.bed"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/merged.hg19.bed
+
+track visibility=dense name="GSM3003539"  color=0,200,0  description="GSM3003539"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/GSM3003539.merged.bed
+
+track visibility=dense name="GSM3003539_intersect"  color=100,100,0  description="GSM3003539"
+https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/intersect.bed
+```
+
+На скриншоте видны пересечения между гистоновой меткой и структурой ДНК:
+
+![hgt_genome_euro_10b04_c9b5d0](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/results/hgt_genome_euro_10b04_c9b5d0.png)
+
+Это, например:
+
+| Позиция | Координаты |
+| ------- | ---------- |
+| 1 | chr20:57463826-57463960 |
+| 2 | chr20:57466901-57466945 |
+
 
 
