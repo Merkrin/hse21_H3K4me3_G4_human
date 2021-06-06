@@ -117,4 +117,13 @@ cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > GSM3003539.merged.be
 
 ![chip_seeker.GSM3003539.merged.plotAnnoPie](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/results/chip_seeker.GSM3003539.merged.plotAnnoPie.png)
 
+#### Анализ пересечений гистоновой метки и структуры ДНК
+
+С помощью bedtools были найдены пересечения гистоновой метки со структурами ДНК:
+```bash
+bedtools intersect -a GSM3003539.merged.bed -b merged.hg19.bed > intersect.bed
+```
+
+Затем с помощью команды `scp -P` полученный файл был загружен на ПК для дальнейшей работы.
+
 
