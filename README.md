@@ -156,5 +156,10 @@ https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/inter
 | 1 | chr20:57463826-57463960 |
 | 2 | chr20:57466901-57466945 |
 
+Далее с помощью [скрипта](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/src/peaks_annotation.R) на языке программирования R полученные пересечения были ассоциированы с ближайшими генами. Было проассоциировано 14965 пиков, 8962 уникальных гена.
+
+С помощью [Panther](http://pantherdb.org/) был проведён GO-анализ для полученных уникальных генов. В [файле](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/data/pantherdb_GO_analysis.txt) представлен результат анализа. Далее приведены несколько самых значимых категорий:
+
+
 
 
