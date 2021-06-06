@@ -160,6 +160,10 @@ https://raw.githubusercontent.com/Merkrin/hse21_H3K4me3_G4_human/main/data/inter
 
 С помощью [Panther](http://pantherdb.org/) был проведён GO-анализ для полученных уникальных генов. В [файле](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/data/pantherdb_GO_analysis.txt) представлен результат анализа. Далее приведены несколько самых значимых категорий:
 
+| Homo sapiens - REFLIST (20595) | intersect.genes_uniq.txt (8324) | intersect.genes_uniq.txt (expected) | intersect.genes_uniq.txt (over/under) | intersect.genes_uniq.txt (fold Enrichment) | intersect.genes_uniq.txt (raw P-value) | intersect.genes_uniq.txt (FDR) |
+| ------------------------------ | ------------------------------- | ----------------------------------- | ------------------------------------- | ------------------------------------------ | -------------------------------------- | ------------------------------ |
+| 486.0	 | 0.0 | 196.43 | - | < 0.01 | 8.090000e-73 | 1.280000e-68 |
+| 441.0	 | 0.0 | 178.24 | - | < 0.01 | 3.130000e-66 | 2.480000e-62 |
+| 522.0	 | 12.0 | 210.98 | - | .06 | 9.470000e-61 | 4.990000e-57 |
 
-
-
+Представленные результаты были получены с помощью [кода](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/src/go_analysis_results.ipynb) на языке программирования Python. Для его работы использовался изменённый [файл](https://github.com/Merkrin/hse21_H3K4me3_G4_human/blob/main/data/analysis_data.txt) с результатами анализа (удалены первые строки с информацией о версии и т.п.).
